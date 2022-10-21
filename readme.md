@@ -175,6 +175,11 @@ Replace spaces with underscores:
 cd ../
 sed -i 's/ /_/' wolf28s.fas
 ```
+
+### skip to here
+```bash
+wget https://raw.githubusercontent.com/phylogenomic/bee551/main/wolf28s.fas
+```
 Align these sequences with muscle
 ```bash!
 muscle -in wolf28s.fas -out wolf28s.al.fas
