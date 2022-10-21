@@ -179,7 +179,7 @@ sed -i 's/ /_/g' wolf28s.fas
 
 ### skip to here
 ```bash
-wget https://raw.githubusercontent.com/phylogenomic/bee551/main/wolf28s.fas
+wget -O https://raw.githubusercontent.com/phylogenomic/bee551/main/wolf28s.fas
 ```
 Align these sequences with muscle
 ```bash!
