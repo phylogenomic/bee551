@@ -300,8 +300,15 @@ nw_order -c n wolf28s.al.fas.midpoint.treefile | nw_display -w 1000 -b 'opacity:
 ```
 Use the command for sftp above to grab it.
 
+
 Branch lengths:  
 The tree shown by default in nw_display (and most other programs) is a phylogram. This means that the lengths of each branch are proportional to the number of substitutions that have accumulated in the sequence along that branch.  
+
+If there are very short branch lengths, clades can be hard to visualize on a phylogram. Try switching the view to a cladogram, using the following command:
+```bash
+nw_order -c n wolf28s.al.fas.midpoint.treefile | nw_topology - | nw_display -s  -w 1000 > wolf28s.al.fas.midpointCL.treefile.svg  -
+```
+
 Questions:  
 * How does your tree compare to the tree in Piacentini and Ramírez?
 * Which nodes are well supported? Which are not?
