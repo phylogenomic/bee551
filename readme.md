@@ -173,7 +173,7 @@ cat *.fa > ../wolf28s.fas
 Replace spaces with underscores:  
 ```bash!
 cd ../
-sed -i .bak 's/ /_/' wolf28s.fas
+sed -i 's/ /_/' wolf28s.fas
 ```
 Align these sequences with muscle
 ```bash!
