@@ -7,7 +7,7 @@ Instance3: ssh root@3.94.175.88
 Instance4: ssh root@3.95.116.238  
 Passwords: bio_312_2022  
 
-Then login:  
+Then login again:  
 ```
 ssh ec2-user@localhost  
 ```
