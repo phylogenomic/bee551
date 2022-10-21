@@ -156,8 +156,9 @@ Paste these into a text file using nano.
 ```bash!
 nano geneids.txt
 ```
+Control-O to save, control-X to exit.  
 
-Make a directory to store the sequences  
+Then Make a directory to store the sequences  
 ```bash
 mkdir seqs
 cd seqs
