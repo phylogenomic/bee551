@@ -261,6 +261,15 @@ So, let's look at it unrooted. nw_display can't do this, so... Let's use an R sc
 wget https://raw.githubusercontent.com/phylogenomic/bee551/main/plotUnrooted.R
 Rscript --vanilla plotUnrooted.R  wolf28s.al.fas.treefile wolf28s.al.fas.treefile.unrooted.pdf 0.3
 ```
+To get the file, use sftp. From ANOTHER terminal window on YOUR computer.
+Change the IP to that of the instance you are using. For example:
+```
+sftp root@3.211.209.68
+cd yourname
+get filename
+```
+replace yourname and filename as appropriate.
+
 Midpoint rooting
 We will use a type of rooting called midpoint - we'll hope that the root is halfway along the longest branch on the tree. (Note: this may not be true, in which case the root will be wrong.)
 We will use the software gotree to reroot the tree.
