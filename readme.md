@@ -264,6 +264,8 @@ Rscript --vanilla plotUnrooted.R  wolf28s.al.fas.treefile wolf28s.al.fas.treefil
 To get the file, use sftp. From ANOTHER terminal window on YOUR computer.
 Change the IP to that of the instance you are using. For example:
 ```
+first, find out where you are on YOUR computer: pwd  
+
 Instance1: sftp root@3.211.209.68  
 Instance2: sftp root@3.228.114.165  
 Instance3: sftp root@3.94.175.88  
@@ -271,9 +273,11 @@ Instance4: sftp root@3.95.116.238
 Passwords: bio_312_2022  
 
 cd /home/ec2-user/yourname
-get filename
+(or cd /home/ec2-user/yourname/seqs if that is where you are)
+get wolf28s.al.fas.treefile.unrooted.pdf
 ```
-replace yourname and filename as appropriate.
+replace yourname as appropriate.
+Now, you will be able to find the file wolf28s.al.fas.treefile.unrooted.pdf on your own computers.
 
 Midpoint rooting
 We will use a type of rooting called midpoint - we'll hope that the root is halfway along the longest branch on the tree. (Note: this may not be true, in which case the root will be wrong.)
@@ -293,6 +297,8 @@ Also, output it as a graphic:
 ```
 nw_order -c n wolf28s.al.fas.treefile | nw_display -w 1000 -b 'opacity:0' -s  >  wolf28s.al.fas.treefile.svg -
 ```
+Use the command for sftp above to grab it.
+
 Branch lengths:  
 The tree shown by default in nw_display (and most other programs) is a phylogram. This means that the lengths of each branch are proportional to the number of substitutions that have accumulated in the sequence along that branch.  
 Questions:  
