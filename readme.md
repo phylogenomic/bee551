@@ -174,7 +174,7 @@ cat *.fa > ../wolf28s.fas
 Replace spaces with underscores:  
 ```bash!
 cd ../
-sed -i 's/ /_/' wolf28s.fas
+sed -i 's/ /_/g' wolf28s.fas
 ```
 
 ### skip to here
