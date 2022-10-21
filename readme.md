@@ -295,7 +295,7 @@ nw_order -c n wolf28s.al.fas.treefile  | nw_display -
 ```
 Also, output it as a graphic:
 ```
-nw_order -c n wolf28s.al.fas.treefile | nw_display -w 1000 -b 'opacity:0' -s  >  wolf28s.al.fas.treefile.svg -
+nw_order -c n wolf28s.al.fas.midpoint.treefile | nw_display -w 1000 -b 'opacity:0' -s  >  wolf28s.al.fas.midpoint.treefile.svg -
 ```
 Use the command for sftp above to grab it.
 
