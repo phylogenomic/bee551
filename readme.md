@@ -264,8 +264,13 @@ Rscript --vanilla plotUnrooted.R  wolf28s.al.fas.treefile wolf28s.al.fas.treefil
 To get the file, use sftp. From ANOTHER terminal window on YOUR computer.
 Change the IP to that of the instance you are using. For example:
 ```
-sftp root@3.211.209.68
-cd yourname
+Instance1: sftp root@3.211.209.68  
+Instance2: sftp root@3.228.114.165  
+Instance3: sftp root@3.94.175.88  
+Instance4: sftp root@3.95.116.238  
+Passwords: bio_312_2022  
+
+cd /home/ec2-user/yourname
 get filename
 ```
 replace yourname and filename as appropriate.
