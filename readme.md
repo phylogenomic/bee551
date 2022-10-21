@@ -24,7 +24,7 @@ cd yourname
 Piacentini and Ramírez study the phylogeny of species in the family Lycosidae. They also include representatives from closely related families Trechaleidae and Pisauridae. They study 5 genes; we will look only at 28S today.
 These are the 28S accession from Table 2.   
 
-What is 28S? Why is it appropriate to use for phylogenetics of species?  
+Question: What is 28S? Why is it appropriate to use for phylogenetics of species?  
 
 ```
 MK496221
