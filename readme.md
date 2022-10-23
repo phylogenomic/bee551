@@ -2,7 +2,7 @@
 [Piacentini and Ramírez](https://pubmed.ncbi.nlm.nih.gov/30953780/) studied the phylogeny of species in the family Lycosidae. They also included representatives from closely related families Trechaleidae and Pisauridae. They studied 5 genes; we will look only at 28S today.  
 
 ## Lab Objective
-The obejective of the lab is to replicate part of the phylogenetic reconstruction from [Piacentini and Ramírez](https://pubmed.ncbi.nlm.nih.gov/30953780/). This will demonstrate the following aspects: gene alignment, model selection, tree building, bootstrap analysis, rooted vs. unrooted trees.  
+The objective of the lab is to replicate part of the phylogenetic reconstruction from [Piacentini and Ramírez](https://pubmed.ncbi.nlm.nih.gov/30953780/). This will demonstrate the following aspects: gene alignment, model selection, tree building, bootstrap analysis, rooted vs. unrooted trees.  
 During the lab, please answer the questions that are posed and turn these in, along with your trees, for credit. 
 
 ## Get logged in to one of the instances set up for this lab on AWS: 
