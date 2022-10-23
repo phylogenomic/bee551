@@ -1,4 +1,9 @@
 # Phylogeny Lab
+[Piacentini and Ramírez](https://pubmed.ncbi.nlm.nih.gov/30953780/) studied the phylogeny of species in the family Lycosidae. They also included representatives from closely related families Trechaleidae and Pisauridae. They studied 5 genes; we will look only at 28S today.  
+
+## Lab Objective
+The obejective of the lab is to replicate part of the phylogenetic reconstruction from [Piacentini and Ramírez](https://pubmed.ncbi.nlm.nih.gov/30953780/). This will demonstrate the following aspects: gene alignment, model selection, tree building, bootstrap analysis, rooted vs. unrooted trees.  
+During the lab, please answer the questions that are posed and turn these in, along with your trees, for credit. 
 
 ## Get logged in to one of the instances set up for this lab on AWS: 
 Instance1: ssh root@3.211.209.68  
@@ -20,8 +25,8 @@ mkdir yourname
 cd yourname
 ```
 
-Piacentini and Ramírez study the phylogeny of species in the family Lycosidae. They also include representatives from closely related families Trechaleidae and Pisauridae. They study 5 genes; we will look only at 28S today.
-These are the 28S accession from Table 2.
+## Obtain 28S sequences
+Now, let's download the 28S accessions from Table 2.
 They are available in the file "geneids.txt" as part of this repository. 
 
 To download this file to your instance:   
@@ -55,6 +60,7 @@ sed -i 's/ /_/g' wolf28s.fas
 ```bash
 wget -O https://raw.githubusercontent.com/phylogenomic/bee551/main/wolf28s.fas
 ```
+## Sequence alignment and alignment evaluation
 Align these sequences with muscle
 ```bash!
 muscle -in wolf28s.fas -out wolf28s.al.fas
@@ -99,10 +105,12 @@ Repat calculating the average percent identity using alignbuddy, which includes 
 
 What is the average percent identity according to alignbuddy?  
 
+## Maximum likelihood phylogeny inference
 Use IQ-TREE to find the maximum likehood tree estimate. First, it will calculate the optimal substitution model (we will tell it to use a model: GTR+F+I to save time) and nucleotide frequencies. Then, it will perform a tree search, estimating branch lengths as it goes.  
 (Simultaneously, we are going to have IQ-TREE estimate ultrafast bootstrap support levels using the flag -bb 1000. We'll talk more about this later.)  
 
 Please review the tutorial: http://www.iqtree.org/doc/Tutorial  
+Rather than evaluating different models, we will specify the model. This will help us to save time.  
 What is the GTR+F+I model? (See http://www.iqtree.org/doc/Substitution-Models )  
 
 ```bash
@@ -116,10 +124,11 @@ How many sites are constant?
 What is the log likelihood of the optimal tree that IQ-TREE found? 
 Hints: look at the output on your screen for "BEST SCORE FOUND" or in the file   wolf28s.al.fas.iqtree file for "Log-likelihood of the tree:".  
 
-Look under the section State frequencies: (empirical counts from alignment) to answer the following two questions.
- What is the least nucloetide in the alignment?
- What is the most frequent nucleotide in the alignment?
- 
+Look under the section State frequencies: (empirical counts from alignment) to answer the following two questions.  
+What is the least nucloetide in the alignment?  
+What is the most frequent nucleotide in the alignment?  
+
+## Rooted vs. unrooted trees
 ### Look at the unrooted tree
 The .iqtree file includes an ASCII graphics (text graphics) version of the tree. You can also display it by reading the .treefile (which is newick formatted) into the nw_display program:
 ```bash
@@ -151,16 +160,16 @@ cd /home/ec2-user/yourname
 (or cd /home/ec2-user/yourname/seqs if that is where you are)
 get wolf28s.al.fas.treefile.unrooted.pdf
 ```
-replace yourname as appropriate.
-Now, you will be able to find the file wolf28s.al.fas.treefile.unrooted.pdf on your own computers.
+replace yourname as appropriate.  
+Now, you will be able to find the file wolf28s.al.fas.treefile.unrooted.pdf on your own computers.  
 
-Midpoint rooting
-We will use a type of rooting called midpoint - we'll hope that the root is halfway along the longest branch on the tree. (Note: this may not be true, in which case the root will be wrong.)
-We will use the software gotree to reroot the tree.
+### Midpoint rooting
+We will use a type of rooting called midpoint - we'll hope that the root is halfway along the longest branch on the tree. (Note: this may not be true, in which case the root will be wrong.)  
+We will use the software gotree to reroot the tree.  
 
--i specifies your input file
--o specifies your output file
-Here is the command:
+-i specifies your input file  
+-o specifies your output file  
+Here is the command:  
 ```bash
 gotree reroot midpoint -i wolf28s.al.fas.treefile -o wolf28s.al.fas.midpoint.treefile
 ```
@@ -175,7 +184,7 @@ nw_order -c n wolf28s.al.fas.midpoint.treefile | nw_display -w 1000 -b 'opacity:
 Use the command for sftp above to grab it.
 
 
-Branch lengths:  
+### Branch lengths  
 The tree shown by default in nw_display (and most other programs) is a phylogram. This means that the lengths of each branch are proportional to the number of substitutions that have accumulated in the sequence along that branch.  
 
 If there are very short branch lengths, clades can be hard to visualize on a phylogram. Try switching the view to a cladogram, using the following command:
@@ -183,7 +192,7 @@ If there are very short branch lengths, clades can be hard to visualize on a phy
 nw_order -c n wolf28s.al.fas.midpoint.treefile | nw_topology - | nw_display -s  -w 1000 > wolf28s.al.fas.midpointCL.treefile.svg  -
 ```
 
-Questions:  
+## Summary Questions 
 * How does your tree compare to the tree in Piacentini and Ramírez?
 * Which nodes are well supported? Which are not?
 * What is different about our methods and their methods?
