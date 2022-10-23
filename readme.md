@@ -1,6 +1,6 @@
 # Phylogeny Lab
 
-## Get logged in
+## Get logged in to one of the instances set up for this lab on AWS: 
 Instance1: ssh root@3.211.209.68  
 Instance2: ssh root@3.228.114.165  
 Instance3: ssh root@3.94.175.88  
@@ -20,19 +20,17 @@ mkdir yourname
 cd yourname
 ```
 
-
 Piacentini and Ramírez study the phylogeny of species in the family Lycosidae. They also include representatives from closely related families Trechaleidae and Pisauridae. They study 5 genes; we will look only at 28S today.
 These are the 28S accession from Table 2.
 They are available in the file "geneids.txt" as part of this repository. 
 
+To download this file to your instance:   
+```
+wget https://raw.githubusercontent.com/phylogenomic/bee551/main/geneids.txt
+```
+
 Question: What is 28S? Why is it appropriate to use for phylogenetics of species?  
 
-wget
-Either paste the geneids into a text file using nano, or download the .
-```bash!
-nano geneids.txt
-```
-Control-O to save, control-X to exit.  
 
 Then Make a directory to store the sequences  
 ```bash
@@ -53,7 +51,7 @@ cd ../
 sed -i 's/ /_/g' wolf28s.fas
 ```
 
-### skip to here
+### If you had trouble downloading the sequences directly from NCBI, you can skip the above steps, and download the mutli-fasta file here:
 ```bash
 wget -O https://raw.githubusercontent.com/phylogenomic/bee551/main/wolf28s.fas
 ```
